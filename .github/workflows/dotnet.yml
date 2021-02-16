@@ -24,7 +24,7 @@ jobs:
       run: dotnet restore
     
     - name: Build
-      run: dotnet build CoreBotWithTests1 --no-restore --configuration 'Release'
+      run: dotnet build --no-restore --configuration 'Release'
     
     - name: set pr build number
       id: PRNUM
