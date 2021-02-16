@@ -69,7 +69,7 @@ namespace CoreBotWithTests1.Tests.Bots
             var sut = new DialogBot<Dialog>(mockConversationState.Object, mockUserState.Object, mockRootDialog.Object, mockLogger.Object);
             var testAdapter = new TestAdapter();
             var testFlow = new TestFlow(testAdapter, sut);
-            await testFlow.Send("Hi").StartTestAsync();
+            await testFlow.Send("Hi!").StartTestAsync();
 
             // Assert that SaveChangesAsync was called
             mockConversationState.Verify(x => x.SaveChangesAsync(It.IsAny<TurnContext>(), It.IsAny<bool>(), It.IsAny<CancellationToken>()), Times.Once);
