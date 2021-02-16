@@ -8,7 +8,7 @@ on:
 
 jobs:
   build:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     env:
       config: 'Release' # use release mode for all steps
 
@@ -27,7 +27,7 @@ jobs:
       run: dotnet build --no-restore --configuration 'Release'
     
     - name: set pr build number
-      id: PRNUM
+      id: PRNUMBER
       if: ${{ github.event_name == 'pull_request' }}
       uses: kkak10/pr-number-action@v1.3
     
